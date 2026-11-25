@@ -8,6 +8,10 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NoAutorizado from "./pages/NoAutorizado";
 import NotFound from "./pages/NotFound";
+import Barberos from "./pages/Barberos";
+import BarberoDetalle from "./pages/BarberoDetalle";
+import Servicios from "./pages/Servicios";
+import ServicioDetalle from "./pages/ServicioDetalle";
 
 export default function App() {
   return (
@@ -16,6 +20,10 @@ export default function App() {
       <main className="contenedor">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/barberos" element={<Barberos />} />
+          <Route path="/barberos/:id" element={<BarberoDetalle />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/servicios/:id" element={<ServicioDetalle />} />
 
           <Route element={<PublicOnlyRoute />}>
             <Route path="/login" element={<Login />} />
