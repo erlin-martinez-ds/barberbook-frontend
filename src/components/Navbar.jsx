@@ -1,3 +1,4 @@
+
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 
@@ -15,8 +16,12 @@ export default function Navbar() {
       <Link to="/" className="navbar__marca">
         BarberBook
       </Link>
+
       <nav className="navbar__links">
         <NavLink to="/">Inicio</NavLink>
+        <NavLink to="/barberos">Barberos</NavLink>
+        <NavLink to="/servicios">Servicios</NavLink>
+
         {user ? (
           <>
             <NavLink to="/dashboard">Mi cuenta</NavLink>
