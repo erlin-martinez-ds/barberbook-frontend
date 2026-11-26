@@ -25,7 +25,9 @@ export default function Navbar() {
         {user ? (
           <>
             <NavLink to="/dashboard">Mi cuenta</NavLink>
-            <NavLink to="/reservas">Mis reservas</NavLink>
+            <NavLink to="/reservas">
+              {user.role === "BARBER" ? "Reservas recibidas" : "Mis reservas"}
+            </NavLink>
             <span className="navbar__usuario">{user.name}</span>
             <button type="button" onClick={handleLogout}>
               Cerrar sesión

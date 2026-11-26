@@ -36,6 +36,9 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .reserva-cabecera h3 { margin: 0; }
 .estado-reserva { border-radius: 999px; background: #e5e7eb; padding: 4px 8px; font-size: 0.85rem; }
 .estado-reserva.confirmada { background: #dcfce7; color: #166534; }
+.estado-reserva.confirmed { background: #dcfce7; color: #166534; }
+.estado-reserva.pending, .estado-reserva.pendiente { background: #fef3c7; color: #92400e; }
+.estado-reserva.rejected, .estado-reserva.rechazada, .estado-reserva.rechazado { background: #fee2e2; color: #991b1b; }
 .estado-reserva.cancelada { background: #fee2e2; color: #991b1b; }
 
 .detalle-reserva { display: grid; gap: 8px; }
