@@ -17,9 +17,25 @@ a { color: #b45309; }
 .formulario form { display: flex; flex-direction: column; gap: 12px; }
 .formulario label { display: flex; flex-direction: column; gap: 4px; }
 input { padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; }
+select { padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; }
 button { padding: 8px 14px; border: 0; border-radius: 6px; background: #b45309; color: #fff; cursor: pointer; }
 button:disabled { opacity: 0.6; cursor: wait; }
 
 .grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
 .tarjeta { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; }
 .tarjeta h3 { margin-top: 0; }
+
+.acciones { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.acciones a { display: inline-block; padding: 8px 14px; border-radius: 6px; }
+.boton-secundario { background: #374151; }
+.boton-peligro { background: #b91c1c; }
+.boton-peligro:disabled { opacity: 0.6; }
+
+.lista-reservas { display: flex; flex-direction: column; gap: 12px; }
+.reserva-cabecera { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.reserva-cabecera h3 { margin: 0; }
+.estado-reserva { border-radius: 999px; background: #e5e7eb; padding: 4px 8px; font-size: 0.85rem; }
+.estado-reserva.confirmada { background: #dcfce7; color: #166534; }
+.estado-reserva.cancelada { background: #fee2e2; color: #991b1b; }
+
+.detalle-reserva { display: grid; gap: 8px; }
