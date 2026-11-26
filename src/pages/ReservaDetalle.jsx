@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosClient from "../api/axiosClient";
 import { Cargando, ErrorMensaje } from "../components/Estado";
+import { useAuth } from "../context/useAuth";
 import { useFetch } from "../hooks/useFetch";
 import { formatDateTime, formatPrice } from "../utils/formatters";
 
 export default function ReservaDetalle() {
+  const { user } = useAuth();
   const { id } = useParams();
   const navigate = useNavigate();
   const { data, loading, error } = useFetch(`/bookings/${id}`);
@@ -39,7 +41,9 @@ export default function ReservaDetalle() {
 
   return (
     <section>
-      <Link to="/reservas">← Volver a mis reservas</Link>
+      <Link to="/reservas">
+        ← {user?.role === "BARBER" ? "Volver a reservas recibidas" : "Volver a mis reservas"}
+      </Link>
       <h1>Detalle de reserva</h1>
       <div className="detalle-reserva">
         {reserva.status && <p>Estado: {reserva.status}</p>}
@@ -56,7 +60,7 @@ export default function ReservaDetalle() {
       </div>
 
       {errorCancelacion && <p className="error">{errorCancelacion}</p>}
-      {!cancelada && (
+      {user?.role !== "BARBER" && !cancelada && (
         <button className="boton-peligro" type="button" onClick={handleCancel} disabled={cancelando}>
           {cancelando ? "Cancelando..." : "Cancelar reserva"}
         </button>
