@@ -15,6 +15,7 @@ import ServicioDetalle from "./pages/ServicioDetalle";
 import Reservas from "./pages/Reservas";
 import NuevaReserva from "./pages/NuevaReserva";
 import ReservaDetalle from "./pages/ReservaDetalle";
+import Admin from "./pages/Admin";
 
 export default function App() {
   return (
@@ -38,6 +39,10 @@ export default function App() {
             <Route path="/reservas" element={<Reservas />} />
             <Route path="/reservas/nueva" element={<NuevaReserva />} />
             <Route path="/reservas/:id" element={<ReservaDetalle />} />
+          </Route>
+
+          <Route element={<ProtectedRoute roles={["ADMIN"]} />}>
+            <Route path="/admin" element={<Admin />} />
           </Route>
 
           <Route path="/no-autorizado" element={<NoAutorizado />} />
