@@ -42,3 +42,39 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .estado-reserva.cancelada { background: #fee2e2; color: #991b1b; }
 
 .detalle-reserva { display: grid; gap: 8px; }
+
+.admin { display: grid; gap: 20px; }
+.admin__cabecera { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.admin__cabecera h1, .admin__cabecera p { margin: 4px 0; }
+.admin__eyebrow { color: #b45309; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.admin__resumen { display: flex; gap: 12px; }
+.admin__resumen span { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 14px; }
+.admin__resumen strong { color: #b45309; }
+.admin__tabs { display: flex; gap: 8px; border-bottom: 1px solid #d1d5db; }
+.admin__tab { background: transparent; color: #374151; border-radius: 6px 6px 0 0; }
+.admin__tab--activa { background: #111827; color: #fff; }
+.admin__contenido { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); align-items: start; gap: 20px; }
+.admin__columna, .admin__formularios { min-width: 0; }
+.admin__titulo-seccion { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.admin__titulo-seccion h2 { margin: 0 0 12px; }
+.admin__titulo-seccion span { color: #6b7280; font-size: 0.9rem; }
+.admin__lista { display: grid; gap: 12px; }
+.admin__tarjeta { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.admin__tarjeta h3, .admin__tarjeta p { margin: 0 0 8px; }
+.admin__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.admin__formulario { display: grid; gap: 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.admin__formulario h2, .admin__formulario p { margin: 0; }
+.admin__formulario label { display: grid; gap: 5px; }
+.admin__formulario textarea { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; font: inherit; resize: vertical; }
+.admin__aviso { color: #166534; background: #dcfce7; padding: 10px 12px; border-radius: 6px; }
+.admin__horarios { display: grid; gap: 8px; }
+.admin__horario { display: grid; grid-template-columns: minmax(100px, 1fr) 1fr 1fr; align-items: center; gap: 8px; }
+.admin__horario .admin__dia { display: flex; grid-template-columns: none; align-items: center; gap: 8px; }
+.admin__dia input { width: auto; }
+.admin__horario input[type="time"] { min-width: 0; padding: 6px; }
+
+@media (max-width: 760px) {
+  .admin__cabecera, .admin__tarjeta { flex-direction: column; align-items: stretch; }
+  .admin__contenido { grid-template-columns: 1fr; }
+  .admin__resumen { justify-content: start; }
+}

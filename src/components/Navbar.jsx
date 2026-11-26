@@ -25,6 +25,7 @@ export default function Navbar() {
         {user ? (
           <>
             <NavLink to="/dashboard">Mi cuenta</NavLink>
+            {user.role === "ADMIN" && <NavLink to="/admin">Administración</NavLink>}
             <NavLink to="/reservas">
               {user.role === "BARBER" ? "Reservas recibidas" : "Mis reservas"}
             </NavLink>
