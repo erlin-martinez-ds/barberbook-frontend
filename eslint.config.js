@@ -24,4 +24,10 @@ export default defineConfig([
       globals: globals.vitest,
     },
   },
+  {
+    files: ['e2e/**/*.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ])

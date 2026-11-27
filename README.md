@@ -7,6 +7,15 @@ Las pruebas unitarias y de componentes usan Vitest, React Testing Library y jsdo
 - `npm test`: ejecutar Vitest en modo watch.
 - `npm run test:run`: ejecutar todas las pruebas una vez (útil para CI).
 
+## Pruebas E2E
+
+Los flujos principales del frontend usan Selenium WebDriver con Page Object Model y una API local de prueba:
+
+- Requiere Google Chrome instalado.
+- `npm run test:e2e`: inicia la API simulada y Vite, y ejecuta los flujos en Chrome headless.
+- Selenium Manager obtiene el ChromeDriver compatible cuando no está instalado.
+- La sesión E2E incluye administración de disponibilidad/servicios, creación de reservas y confirmación por el barbero.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
