@@ -1,5 +1,12 @@
 # React + Vite
 
+## Pruebas
+
+Las pruebas unitarias y de componentes usan Vitest, React Testing Library y jsdom:
+
+- `npm test`: ejecutar Vitest en modo watch.
+- `npm run test:run`: ejecutar todas las pruebas una vez (útil para CI).
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

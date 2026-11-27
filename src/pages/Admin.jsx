@@ -173,7 +173,7 @@ export default function Admin() {
     setGuardando(true);
     try {
       await axiosClient.delete(`/barbers/${id}`);
-      setBarberos((actuales) => actuales.filter((item) => getId(item) !== id));
+      setBarberos(barberos.filter((item) => getId(item) !== id));
       setAviso("Barbero eliminado correctamente.");
       if (barberoHorario === id) setBarberoHorario(null);
     } catch (error) {
@@ -217,8 +217,8 @@ export default function Admin() {
       await axiosClient.patch(`/barbers/${barberoHorario}/availability`, {
         availability: horario,
       });
-      setBarberos((actuales) =>
-        actuales.map((barbero) =>
+      setBarberos(
+        barberos.map((barbero) =>
           getId(barbero) === barberoHorario
             ? { ...barbero, availability: horario }
             : barbero,
@@ -282,7 +282,7 @@ export default function Admin() {
     setGuardando(true);
     try {
       await axiosClient.delete(`/services/${id}`);
-      setServicios((actuales) => actuales.filter((item) => getId(item) !== id));
+      setServicios(servicios.filter((item) => getId(item) !== id));
       setAviso("Servicio eliminado correctamente.");
     } catch (error) {
       setErrorAccion(error.userMessage ?? "No se pudo eliminar el servicio.");
